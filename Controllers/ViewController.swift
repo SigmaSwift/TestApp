@@ -74,7 +74,6 @@ class ViewController: UIViewController {
     }
     
     
-    
     @objc private func buttonTapped() {
         let secondViewController = SecondViewController()
         navigationController?.pushViewController(secondViewController, animated: true)

@@ -15,6 +15,7 @@ class SecondViewController: UIViewController {
     var progressBar: UIProgressView!
     var backButton: UIButton!
     var continueButton: UIButton!
+    var counter = 0
     
     
     override func viewDidLoad() {
@@ -109,12 +110,24 @@ class SecondViewController: UIViewController {
     }
     
     @objc func choiseButtons(_ button: UIButton) {
+        
+        if button.tag == 1 {
+            counter -= 1
+        }
+        
+        if counter == 3 {
+            return
+        }
+        
         if button.backgroundColor == .white {
             button.backgroundColor = #colorLiteral(red: 1, green: 0.591432311, blue: 0.1248349377, alpha: 1)
-             button.setTitleColor(.white, for: .normal)
+            button.setTitleColor(.white, for: .normal)
+            button.tag = 1
+            counter += 1
         } else {
             button.backgroundColor = .white
             button.setTitleColor(.black, for: .normal)
+            button.tag = 0
         }
     }
     
